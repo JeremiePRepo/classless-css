@@ -4,8 +4,12 @@
  | -------------------------------------
 \*/
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i');
-// @import "reboot";
+// @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i');
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "root";
+@import "reboot";
 
 /*\
  | -------------------------------------
@@ -13,49 +17,88 @@
  | -------------------------------------
 \*/
 
-$fonts:400 16px/18px 'Roboto',
-'Verdana',
-'Helvatica',
-'Arial',
-sans-serif;
-$font-color:#4a4a4a;
-$accent-font-color:#9a9a9a;
-$accent-color:#2c8898;
-$background-color:#f9f9f9;
+// $fonts:400 16px/18px 'Roboto',
+// 'Verdana',
+// 'Helvatica',
+// 'Arial',
+// sans-serif;
+// $font-color:#4a4a4a;
+// $accent-font-color:#9a9a9a;
+// $accent-color:#2c8898;
+// $background-color:#f9f9f9;
 
-/*\
- | -------------------------------------
- | Generals
- | -------------------------------------
-\*/
+// /*\
+//  | -------------------------------------
+//  | Generals
+//  | -------------------------------------
+// \*/
 
 body {
-    font: $fonts;
-    color: $font-color;
-    background-color: $background-color;
-    margin: 10vw;
+    font: $font-family-sans-serif;
+    color: $gray-700;
+    background-color: $gray-100;
+    margin: 5vw 10vw;
 }
 
 a {
-    color: $accent-font-color;
+    color: $gray-600;
     text-decoration: none;
 
     &:hover {
-        color: $accent-color;
+        color: theme-color("primary");
     }
 }
 
 h1 {
     font-size: 3em;
+    line-height: 3em;
 }
 
-ul {
-    padding: 0;
+ul,
+ol {
+    padding: 1em;
+}
 
-    & li {
-        list-style: none;
+ul li {
+    list-style: none;
+}
 
-    }
+blockquote {
+    font-style: italic;
+    margin-left: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid theme-color("primary");
+}
+
+hr {
+    border-color: theme-color("primary");
+}
+
+table {
+    width: 100%;
+}
+
+td,
+th {
+    padding: 0.5em;
+    border-bottom: 1px solid $gray-200;
+}
+
+caption,
+figcaption {
+    text-align: center;
+    font-style: italic;
+    font-size: .9em;
+}
+
+pre,
+code,
+samp {
+    background-color: $gray-200;
+}
+
+pre {
+    padding: .75em;
 }
 
 /*\
